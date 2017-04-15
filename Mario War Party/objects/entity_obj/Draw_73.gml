@@ -1,0 +1,1 @@
+event_perform_components(ev_draw, ev_draw_end)

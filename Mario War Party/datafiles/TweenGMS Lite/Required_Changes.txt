@@ -1,0 +1,74 @@
+
+************************
+*** Required changes ***
+************************
+
+=====================================
+===== TweenFire and TweenCreate =====
+=====================================
+
+TweenCreate() has been deprecated and will be completely removed in a future update.
+
+The parameter definition for TweenFire() has changed. It now takes MODE and DELAY arguments.
+
+	[OLD VERSION]
+	TweenFire(target,property,delta,ease,start,dest,dur)
+
+	[NEW VERSION]
+	TweenFire(id,property,ease,mode,delta,delay,dur,start,dest)
+
+	e.g.
+	TweenFire(id, x__, EaseInQuad, TWEEN_MODE_ONCE, true, 0.0, 1.0, x, mouse_x);
+
+	[Tween Play Mode Macros]
+	0 = TWEEN_MODE_ONCE
+	1 = TWEEN_MODE_BOUNCE
+	2 = TWEEN_MODE_PATROL
+
+The old definition is still supported for backwards compatiblity, but a future version
+of TweenGMS will remove this and cause outdated calls to error.
+
+As a result of these changes, all TweenFire**** variants are now deprecated.
+See updated script reference for more details.
+
+
+=====================================
+===== Standard Property Setters =====
+=====================================
+
+Property setter scripts no longer use a tween's target instance as the calling environment. 
+This means that you must now use 'argument1' for referencing a tween's target instance.
+
+	[OLD VERSION]
+	/// x__(value)
+	x = argument0;
+
+	[NEW VERSION]
+	/// x__(value,instance)
+	argument1.x = argument0;
+
+However, no changes are needed for global variables...
+
+	/// score__(value)
+	score = argument0;
+
+*** PLEASE MAKE NEEDED CHANGES TO YOUR CUSTOM PROPERTY SETTER SCRIPTS ***
+
+
+
+=====================================
+===== 	Events and Callbacks 	=====
+=====================================
+
+TweenOnFinishAdd() and TweenOnBounceAdd() are now deprecated.
+TweenAddCallback() has been added to replace them with the use of event macros.
+
+	e.g.
+	TweenAddCallback(tween, TWEEN_EV_FINISH, id, ShowMessage, "A profound statement!");
+
+	[Tween Event Macros]
+	TWEEN_EV_FINISH
+	TWEEN_EV_CONTINUE -- Replaces "bounce" event
+
+
+

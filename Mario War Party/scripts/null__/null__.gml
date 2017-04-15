@@ -1,0 +1,2 @@
+/// null()
+// return 0

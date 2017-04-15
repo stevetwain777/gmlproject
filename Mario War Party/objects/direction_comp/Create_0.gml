@@ -1,0 +1,1 @@
+facing_dir = facing_direction.right

@@ -1,0 +1,3 @@
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script __global_object_depths.gml

@@ -1,0 +1,3 @@
+event_perform_components(ev_destroy, 0)
+ds_map_destroy(components)
+ds_list_destroy(primary_components)

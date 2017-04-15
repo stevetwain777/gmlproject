@@ -1,0 +1,1 @@
+event_perform_object(player_movement_comp, ev_other, ev_user15)
